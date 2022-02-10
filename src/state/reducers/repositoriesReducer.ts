@@ -1,14 +1,21 @@
+import { ActionType } from "../action-types";
+import { Action } from "../actions";
+
+
 interface RepositoriesState{
     loading:boolean
     error: string|null
     data: string[]
 }
 
-
-
+const initialState={
+    loading:false,
+    error:null,
+    data:[]
+}
 
 const reducer = (
-    state:RepositoriesState,
+    state:RepositoriesState=initialState,
      action:Action
      ):RepositoriesState=>{
     switch(action.type){
